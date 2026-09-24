@@ -3,7 +3,7 @@ from django.conf import settings
 from django.dispatch import receiver
 from django.template.loader import get_template
 from django.utils.timezone import now
-from django.utils.translation import pgettext, ugettext_lazy as _
+from django.utils.translation import pgettext, gettext_lazy as _
 from pretix.control.signals import html_page_start, nav_topbar
 
 

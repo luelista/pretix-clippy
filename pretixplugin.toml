@@ -1,0 +1,9 @@
+[plugin]
+package = "pretix-clippy"
+modules = [ "pretix_clippy" ]
+marketplace_name = "clippy"
+pypi = false
+repository_servers = { origin = "github.com" }
+tag_targets = [ "origin" ]
+branch_targets = [ "origin/master", "f:origin/stable" ]
+

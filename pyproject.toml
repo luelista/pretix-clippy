@@ -1,0 +1,41 @@
+[project]
+name = "pretix-clippy"
+dynamic = ["version"]
+description = "Plugin to add Clippy to pretix - The one plugin you didn't knew you even needed it. Until now."
+readme = "README.rst"
+requires-python = ">=3.9"
+license = {file = "LICENSE"}
+keywords = ["pretix"]
+authors = [
+    {name = "Martin Gross", email = "martin@pc-coholic.de"},
+]
+maintainers = [
+    {name = "Martin Gross", email = "martin@pc-coholic.de"},
+]
+
+dependencies = [
+
+]
+classifiers = ["Private :: Do not Upload"]
+
+[project.entry-points."pretix.plugin"]
+pretix_clippy = "pretix_clippy:PretixPluginMeta"
+
+[project.entry-points."distutils.commands"]
+build = "pretix_plugin_build.build:CustomBuild"
+
+[build-system]
+requires = [
+    "setuptools",
+    "pretix-plugin-build",
+]
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.dynamic]
+version = {attr = "pretix_clippy.__version__"}
+
+[tool.setuptools.packages.find]
+include = ["pretix*"]
+namespaces = false
